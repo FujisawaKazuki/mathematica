@@ -1,0 +1,102 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      3967,        101]
+NotebookOptionsPosition[      3545,         80]
+NotebookOutlinePosition[      3911,         96]
+CellTagsIndexPosition[      3868,         93]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "ModCRTBinary", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ModCRTBinary", "[", 
+    RowBox[{"valueList_", ",", "g_", ",", "modList_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ListLen", ",", "n", ",", "m", ",", "l", ",", "x", ",", "i"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ListLen", "=", 
+       RowBox[{"Length", "[", "modList", "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"ListLen", "\[NotEqual]", 
+         RowBox[{"Length", "[", "valueList", "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Print", "[", "\"\<Error:\>\"", "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"l", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", "ListLen"}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"l", "=", 
+          RowBox[{"Append", "[", 
+           RowBox[{"l", ",", 
+            RowBox[{"ModBinary", "[", 
+             RowBox[{
+              RowBox[{"valueList", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], ",", "g", ",", 
+              RowBox[{"modList", "[", 
+               RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], "]"}]}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"m", "=", 
+       RowBox[{"CRT", "[", 
+        RowBox[{"modList", ",", "l"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "m", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124444594453287`*^9, 3.612444506682475*^9}, {3.61244453726824*^9, 
+   3.6124445524030952`*^9}, {3.61247909281553*^9, 3.612479093980741*^9}, {
+   3.614092111379492*^9, 3.614092334998807*^9}, {3.6140924048695107`*^9, 
+   3.614092430654332*^9}, {3.620649412440433*^9, 3.6206494418334017`*^9}, {
+   3.620651380771366*^9, 3.620651386066257*^9}, {3.620651773935586*^9, 
+   3.620651810056087*^9}, {3.6206520421689796`*^9, 3.6206520432106047`*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{77, Automatic}, {17, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 3141, 65, 253, "Input"]
+}
+]
+*)
+

@@ -1,0 +1,61 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      1714,         60]
+NotebookOptionsPosition[      1295,         39]
+NotebookOutlinePosition[      1660,         55]
+CellTagsIndexPosition[      1617,         52]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "CharacterstoHexString", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"CharacterstoHexString", "[", "string_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"len", ",", "array"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"len", "=", 
+       RowBox[{"StringLength", "[", "string", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"array", "=", 
+       RowBox[{"ToCharacterCode", "[", "string", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"IntegerString", "[", 
+        RowBox[{
+         RowBox[{"FromDigits", "[", 
+          RowBox[{"array", ",", "256"}], "]"}], ",", "16", ",", 
+         RowBox[{"2", "*", "len"}]}], "]"}], "]"}], ";"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6159176411418047`*^9, 3.615917641146071*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{29, Automatic}, {6, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 891, 24, 73, "Input"]
+}
+]
+*)
+

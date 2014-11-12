@@ -1,0 +1,126 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      4721,        125]
+NotebookOptionsPosition[      4226,        101]
+NotebookOutlinePosition[      4594,        117]
+CellTagsIndexPosition[      4551,        114]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "ModBinary", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ModBinary", "[", 
+     RowBox[{"k_", ",", "g_", ",", "n_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"y", ",", "kBitArray", ",", "kBitLen", ",", "i", ",", "ys"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"k", "\[Equal]", "0"}], ",", 
+         RowBox[{"Return", "[", "1", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"kBitArray", "=", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"k", ",", "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"kBitLen", "=", 
+        RowBox[{"Length", "[", "kBitArray", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ys", "=", 
+        RowBox[{"{", "g", "}"}]}], ";", 
+       RowBox[{"y", "=", "g"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "2"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "kBitLen"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"kBitArray", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "\[Equal]", "1"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"y", "=", 
+             RowBox[{"Mod", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Mod", "[", 
+                 RowBox[{
+                  RowBox[{"y", "^", "2"}], ",", "n"}], "]"}], "*", "g"}], ",",
+                "n"}], "]"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"y", "=", 
+             RowBox[{"Mod", "[", 
+              RowBox[{
+               RowBox[{"y", "^", "2"}], ",", "n"}], "]"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ys", "=", 
+           RowBox[{"Append", "[", 
+            RowBox[{"ys", ",", "y"}], "]"}]}], ";"}]}], "\[IndentingNewLine]",
+         "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "y", "]"}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ModBinary", "[", 
+  RowBox[{"122", ",", "80", ",", "77"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.612369516015724*^9, 3.612369521774312*^9}, {3.612369561240489*^9, 
+   3.6123699556166763`*^9}, {3.612369986135355*^9, 3.612370168474429*^9}, {
+   3.6123702956745453`*^9, 3.612370500731637*^9}, {3.612370590158402*^9, 
+   3.612370939338921*^9}, {3.619000658690433*^9, 3.619000662428041*^9}, {
+   3.620648014198288*^9, 3.620648049344304*^9}, {3.620648165690618*^9, 
+   3.620648207209552*^9}, {3.620648271747466*^9, 3.620648286700988*^9}, {
+   3.6208332857239447`*^9, 3.620833309562891*^9}, {3.620834679307762*^9, 
+   3.620834746403241*^9}}],
+
+Cell[BoxData["9"], "Output",
+ CellChangeTimes->{
+  3.620833311539875*^9, {3.620834691944158*^9, 3.6208347026935167`*^9}, 
+   3.620834740293644*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, 108}, {-36, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 3638, 78, 253, "Input"],
+Cell[4063, 95, 147, 3, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+

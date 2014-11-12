@@ -1,0 +1,130 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      4753,        129]
+NotebookOptionsPosition[      4347,        108]
+NotebookOutlinePosition[      4697,        124]
+CellTagsIndexPosition[      4654,        121]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "JQECAdd", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JQECAdd", "[", 
+    RowBox[{
+    "x1_", ",", "y1_", ",", "z1_", ",", "x2_", ",", "y2_", ",", "z2_", ",", 
+     "a_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "x3", ",", "y3", ",", "z3", ",", "x32", ",", "z32", ",", "r1", ",", 
+       "r2", ",", "F", ",", "G", ",", "x12", ",", "z12", ",", "z22", ",", 
+       "x22"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"x12", "=", 
+       RowBox[{"x1", "^", "2"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"z12", "=", 
+       RowBox[{"z1", "^", "2"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"x22", "=", 
+       RowBox[{"x2", "^", "2"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"z22", "=", 
+       RowBox[{"z2", "^", "2"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"r1", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x1", "+", "z1"}], ")"}], "^", "2"}], "-", "x12", "-", 
+        "z12"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"r2", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x2", "+", "z2"}], ")"}], "^", "2"}], "-", "x22", "-", 
+        "z22"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"F", "=", 
+       RowBox[{"2", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x12", "*", "z12"}], "+", 
+          RowBox[{"x22", "*", "z22"}]}], ")"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"G", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"a", "-", "1"}], ")"}], "*", "r1", "*", "r2"}], "+", 
+        RowBox[{"2", "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"x12", "+", "z12"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"x22", "+", "z22"}], ")"}]}], "+", 
+           RowBox[{"y1", "*", "y2"}]}], ")"}]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"x3", "=", 
+       RowBox[{
+        RowBox[{"y1", "*", "r2"}], "+", 
+        RowBox[{"y2", "*", "r1"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"z3", "=", 
+       RowBox[{"2", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"z12", "*", "z22"}], "+", 
+          RowBox[{"x12", "*", "x22"}]}], ")"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"y3", "=", 
+       RowBox[{
+        RowBox[{"F", "*", "G"}], "-", 
+        RowBox[{"x32", "*", "z32"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{"x3", ",", "y3", ",", "z3", ",", "x32", ",", "z32"}], "}"}], 
+       "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124446312872057`*^9, 3.6124446561936817`*^9}, {3.612444938435648*^9, 
+   3.612444969065277*^9}, {3.612445114522283*^9, 3.612445130425054*^9}, {
+   3.618494270214566*^9, 3.618494322804947*^9}, {3.6184943696921043`*^9, 
+   3.618494396466865*^9}, {3.618494850798781*^9, 3.618494933693884*^9}, {
+   3.61952232074043*^9, 3.619522349997177*^9}, {3.619522389957101*^9, 
+   3.619522502641006*^9}, {3.619522550646435*^9, 3.61952282478268*^9}}]
+},
+WindowSize->{680, 708},
+WindowMargins->{{84, Automatic}, {3, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit) \
+(2011\:5e7410\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 3943, 93, 253, "Input"]
+}
+]
+*)
+

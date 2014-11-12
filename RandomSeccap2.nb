@@ -1,0 +1,321 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     12478,        320]
+NotebookOptionsPosition[     11309,        273]
+NotebookOutlinePosition[     11680,        289]
+CellTagsIndexPosition[     11637,        286]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "RandomSeccap2", "]"}], ";"}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomSeccap2", "[", 
+    RowBox[{"rLen_", ",", "seed_", ",", "type_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "path", ",", "randomexe", ",", "RandomData", ",", "RandomArray", ",", 
+       "i", ",", "command"}], "}"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+      "path", " ", "=", " ", "\"\</Users/kazuki-f/Desktop/mathematica\>\""}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"randomexe", "=", " ", "\"\<rngSeccap_mac_ver2.exe\>\""}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"command", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"ToFileName", "[", 
+         RowBox[{"path", ",", "randomexe"}], "]"}], "<>", 
+        "\[IndentingNewLine]", "  ", 
+        RowBox[{"ToString", "[", 
+         RowBox[{"StringForm", "[", 
+          RowBox[{"\"\< `` \>\"", ",", "rLen"}], "]"}], "]"}], "<>", 
+        "seed"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<command=\>\"", ",", "command"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"RandomData", "=", 
+       RowBox[{"RunThrough", "[", 
+        RowBox[{"command", ",", "Null"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<RandomData=\>\"", ",", "RandomData"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"type", "\[Equal]", "0"}], ",", 
+        RowBox[{"Return", "[", "RandomData", "]"}]}], "]"}], ";", 
+      RowBox[{"(*", 
+       RowBox[{
+       "128", "\:30d3\:30c3\:30c8\:306e\:4e71\:6570\:309216\:9032\:6587\:5b57\
+\:5217\:3068\:3057\:3066\:51fa\:529b"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"type", "\[Equal]", "1"}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{"FromDigits", "[", 
+          RowBox[{"RandomData", ",", "16"}], "]"}], "]"}]}], "]"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "128", "\:30d3\:30c3\:30c8\:306e\:4e71\:6570\:3092\:6574\:6570\:3068\
+\:3057\:3066\:51fa\:529b"}], "*)"}], "\[IndentingNewLine]", ";"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"RandomSeccap2", "[", 
+  RowBox[{"32", ",", "\"\<AISTA\>\"", ",", "0"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RandomSeccap2", "[", 
+   RowBox[{"32", ",", "\"\<SecCap\>\"", ",", "0"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124444594453287`*^9, 3.612444506682475*^9}, {3.61244453726824*^9, 
+   3.6124445524030952`*^9}, {3.61247909281553*^9, 3.612479093980741*^9}, {
+   3.614088990579503*^9, 3.6140890538993397`*^9}, {3.614089227130365*^9, 
+   3.614089624339951*^9}, 3.614158796547773*^9, 3.614291926727086*^9, {
+   3.614419251418006*^9, 3.614419327217844*^9}, {3.614419377337125*^9, 
+   3.614419379610787*^9}, {3.614419528979125*^9, 3.614419555296178*^9}, {
+   3.614422872490142*^9, 3.614422945092663*^9}, {3.6144229858600616`*^9, 
+   3.61442298707605*^9}, {3.61442311476527*^9, 3.614423115412983*^9}, {
+   3.614423784833836*^9, 3.614423794313801*^9}, {3.6144244724613323`*^9, 
+   3.614424474040058*^9}, {3.614499771492285*^9, 3.614499773995592*^9}, {
+   3.614501709908331*^9, 3.614501712247838*^9}, {3.614501814310586*^9, 
+   3.614501815995483*^9}, {3.614501923050232*^9, 3.614501926153932*^9}, {
+   3.614502020017568*^9, 3.614502021540985*^9}, {3.614502108785267*^9, 
+   3.614502110310375*^9}, {3.614875417163806*^9, 3.614875422847745*^9}, {
+   3.6148755858940783`*^9, 3.614875592114361*^9}, {3.6149282971406403`*^9, 
+   3.614928314082182*^9}, {3.614928367672956*^9, 3.614928370999167*^9}, {
+   3.61592047871761*^9, 3.6159204795942*^9}, {3.6159206031793613`*^9, 
+   3.6159206308245296`*^9}, {3.6159207561776867`*^9, 3.615920759564911*^9}, {
+   3.6159209852090063`*^9, 3.615920987854002*^9}, {3.620839953366371*^9, 
+   3.620839954544507*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"command=\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/kazuki-f/Desktop/mathematica/rngSeccap_mac_ver1.exe 32 \
+AISTA\"\>"}],
+  SequenceForm[
+  "command=", 
+   "/Users/kazuki-f/Desktop/mathematica/rngSeccap_mac_ver1.exe 32 AISTA"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6144229888364477`*^9, 3.6144231172573347`*^9, 3.614423788107066*^9, 
+   3.6144238429574747`*^9, 3.6144244858914223`*^9, 3.614499775950713*^9, 
+   3.61450171469629*^9, 3.614501818531013*^9, 3.614501930350377*^9, 
+   3.614502023721382*^9, 3.614502113058296*^9, 3.614875431779722*^9, 
+   3.6148755940675993`*^9, {3.614928299180284*^9, 3.614928320051323*^9}, 
+   3.6149283751512003`*^9, 3.6159204812317333`*^9, 3.6159206348057957`*^9, 
+   3.6159207620471087`*^9, 3.6159209918268433`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"RandomData=\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C518BB7556359C971869D8DD21C12E3C9BFECD3FDB25B580173B7B60DC981371\"\>"}],
+  SequenceForm[
+  "RandomData=", 
+   "C518BB7556359C971869D8DD21C12E3C9BFECD3FDB25B580173B7B60DC981371"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6144229888364477`*^9, 3.6144231172573347`*^9, 3.614423788107066*^9, 
+   3.6144238429574747`*^9, 3.6144244858914223`*^9, 3.614499775950713*^9, 
+   3.61450171469629*^9, 3.614501818531013*^9, 3.614501930350377*^9, 
+   3.614502023721382*^9, 3.614502113058296*^9, 3.614875431779722*^9, 
+   3.6148755940675993`*^9, {3.614928299180284*^9, 3.614928320051323*^9}, 
+   3.6149283751512003`*^9, 3.6159204812317333`*^9, 3.6159206348057957`*^9, 
+   3.6159207620471087`*^9, 3.6159209918299217`*^9}]
+}, Open  ]],
+
+Cell[BoxData["\<\"\
+C518BB7556359C971869D8DD21C12E3C9BFECD3FDB25B580173B7B60DC981371\"\>"], \
+"Output",
+ CellChangeTimes->{{3.6149282992541103`*^9, 3.614928320058434*^9}, 
+   3.614928375158718*^9, 3.615920481304982*^9, 3.6159206348644247`*^9, 
+   3.615920762052965*^9, 3.615920991832816*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"command=\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/kazuki-f/Desktop/mathematica/rngSeccap_mac_ver1.exe 32 \
+SecCap\"\>"}],
+  SequenceForm[
+  "command=", 
+   "/Users/kazuki-f/Desktop/mathematica/rngSeccap_mac_ver1.exe 32 SecCap"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6144229888364477`*^9, 3.6144231172573347`*^9, 3.614423788107066*^9, 
+   3.6144238429574747`*^9, 3.6144244858914223`*^9, 3.614499775950713*^9, 
+   3.61450171469629*^9, 3.614501818531013*^9, 3.614501930350377*^9, 
+   3.614502023721382*^9, 3.614502113058296*^9, 3.614875431779722*^9, 
+   3.6148755940675993`*^9, {3.614928299180284*^9, 3.614928320051323*^9}, 
+   3.6149283751512003`*^9, 3.6159204812317333`*^9, 3.6159206348057957`*^9, 
+   3.6159207620471087`*^9, 3.615920991835257*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"RandomData=\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"4D0698DDE55B7D407A066F205A2336AE531194AB6AFCB0F5008BB50CA6DEB877\"\>"}],
+  SequenceForm[
+  "RandomData=", 
+   "4D0698DDE55B7D407A066F205A2336AE531194AB6AFCB0F5008BB50CA6DEB877"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6144229888364477`*^9, 3.6144231172573347`*^9, 3.614423788107066*^9, 
+   3.6144238429574747`*^9, 3.6144244858914223`*^9, 3.614499775950713*^9, 
+   3.61450171469629*^9, 3.614501818531013*^9, 3.614501930350377*^9, 
+   3.614502023721382*^9, 3.614502113058296*^9, 3.614875431779722*^9, 
+   3.6148755940675993`*^9, {3.614928299180284*^9, 3.614928320051323*^9}, 
+   3.6149283751512003`*^9, 3.6159204812317333`*^9, 3.6159206348057957`*^9, 
+   3.6159207620471087`*^9, 3.6159209918814907`*^9}]
+}, Open  ]],
+
+Cell[BoxData["\<\"\
+4D0698DDE55B7D407A066F205A2336AE531194AB6AFCB0F5008BB50CA6DEB877\"\>"], \
+"Output",
+ CellChangeTimes->{{3.6149282992541103`*^9, 3.614928320058434*^9}, 
+   3.614928375158718*^9, 3.615920481304982*^9, 3.6159206348644247`*^9, 
+   3.615920762052965*^9, 3.6159209918847113`*^9}]
+}, Open  ]],
+
+Cell[BoxData["\"\<\
+E0E2E7F91C11743E84771EE06A692355649332856883701493A9F09A9A61AE60\>\""], \
+"Input",
+ CellChangeTimes->{{3.61492829105665*^9, 3.614928294140069*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\"\<2611A0C161ACA5344CE116B90F4DD7F6B71E0A34\>\"", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6144868969956303`*^9, 3.614486934140461*^9}, {
+  3.614486968295286*^9, 3.6144870112729063`*^9}, {3.614487370191866*^9, 
+  3.614487373949082*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RandomSeccap2", "[", 
+   RowBox[{"20", ",", "\"\<Auth\>\"", ",", "0"}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.614487376884405*^9, 3.614487389454258*^9}, {
+  3.614487451498851*^9, 3.6144874681866503`*^9}, {3.614499749308522*^9, 
+  3.614499751568087*^9}}],
+
+Cell[BoxData[
+ RowBox[{"RandomSeccap2", "[", 
+  RowBox[{"20", ",", "\<\"Auth\"\>", ",", "0"}], "]"}]], "Output",
+ CellChangeTimes->{{3.614499753666811*^9, 3.614499763615645*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.614499765065812*^9, 3.614499766556601*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RandomSeccap2", "[", 
+   RowBox[{"20", ",", "\"\<quest\>\"", ",", "0"}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.614487514351182*^9, 3.6144875330227137`*^9}, {
+  3.614487572446664*^9, 3.6144875774553423`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"command=\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/kazuki-f/Desktop/mathematica/rngSeccap_mac_ver1.exe 20 \
+quest\"\>"}],
+  SequenceForm[
+  "command=", 
+   "/Users/kazuki-f/Desktop/mathematica/rngSeccap_mac_ver1.exe 20 quest"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6144875792503977`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"RandomData=\"\>", 
+   "\[InvisibleSpace]", "\<\"2844B2F49506E22D42170A9F9DE1B79172922E38\"\>"}],
+  SequenceForm["RandomData=", "2844B2F49506E22D42170A9F9DE1B79172922E38"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.614487579331072*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, -1514}, {-106, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 4815, 95, 345, "Input"],
+Cell[CellGroupData[{
+Cell[5262, 114, 817, 17, 20, "Print"],
+Cell[6082, 133, 815, 16, 20, "Print"]
+}, Open  ]],
+Cell[6912, 152, 291, 5, 27, "Output"],
+Cell[CellGroupData[{
+Cell[7228, 161, 817, 17, 20, "Print"],
+Cell[8048, 180, 815, 16, 20, "Print"]
+}, Open  ]],
+Cell[8878, 199, 293, 5, 27, "Output"]
+}, Open  ]],
+Cell[9186, 207, 167, 3, 27, "Input"],
+Cell[9356, 212, 303, 5, 58, "Input"],
+Cell[CellGroupData[{
+Cell[9684, 221, 340, 7, 58, "Input"],
+Cell[10027, 230, 178, 3, 27, "Output"]
+}, Open  ]],
+Cell[10220, 236, 92, 1, 27, "Input"],
+Cell[CellGroupData[{
+Cell[10337, 241, 271, 6, 43, "Input"],
+Cell[CellGroupData[{
+Cell[10633, 251, 353, 10, 20, "Print"],
+Cell[10989, 263, 292, 6, 20, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

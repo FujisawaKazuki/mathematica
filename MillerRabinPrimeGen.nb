@@ -1,0 +1,106 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      3882,        105]
+NotebookOptionsPosition[      3460,         84]
+NotebookOutlinePosition[      3826,        100]
+CellTagsIndexPosition[      3783,         97]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "MillerRabinPrimeGen", "]"}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"k", "\:ff1a", 
+    RowBox[{
+    "Miller", "-", 
+     "Rabin\:5224\:5b9a\:3092\:30c1\:30a7\:30c3\:30af\:3059\:308b\:56de\:6570\
+"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MillerRabinPrimeGen", "[", 
+    RowBox[{"nBitLen_", ",", "k_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "n"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{"True", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"n", "=", 
+          RowBox[{"RandamInteger", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"2", "^", 
+              RowBox[{"(", 
+               RowBox[{"nBitLen", "-", "1"}], ")"}]}], ",", 
+             RowBox[{
+              RowBox[{"2", "^", 
+               RowBox[{"(", "nBitLen", ")"}]}], "-", "1"}]}], "}"}], "]"}]}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"While", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"MillerRabinJudge", "[", 
+             RowBox[{"n", ",", 
+              RowBox[{"Prime", "[", "i", "]"}]}], "]"}], "&&", 
+            RowBox[{"i", "<", "k"}]}], ",", 
+           RowBox[{
+            RowBox[{"i", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"i", "\[Equal]", "k"}], "&&", 
+            RowBox[{"MillerRabinJudge", "[", 
+             RowBox[{"n", ",", 
+              RowBox[{"Prime", "[", "k", "]"}]}], "]"}]}], ",", 
+           RowBox[{"Return", "[", "n", "]"}]}], "]"}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.612369516015724*^9, 3.612369521774312*^9}, {3.612369561240489*^9, 
+   3.6123699556166763`*^9}, {3.612369986135355*^9, 3.612370168474429*^9}, {
+   3.6123702956745453`*^9, 3.612370500731637*^9}, {3.615803598100306*^9, 
+   3.615803736157688*^9}, {3.616573112572928*^9, 3.616573113413639*^9}, {
+   3.6165731524101257`*^9, 3.616573311712577*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, 291}, {5, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 3056, 69, 197, "Input"]
+}
+]
+*)
+

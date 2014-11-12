@@ -1,0 +1,162 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      5911,        161]
+NotebookOptionsPosition[      5488,        140]
+NotebookOutlinePosition[      5854,        156]
+CellTagsIndexPosition[      5811,        153]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "MGF", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"MGF", "[", 
+     RowBox[{"D_", ",", "dLen_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Dchar", ",", "c1", ",", "c2", ",", "indata", ",", "outdata"}],
+        "}"}], ",", 
+      RowBox[{"(*", "D\:306f16\:9032\:6587\:5b57\:5217", "*)"}], 
+      RowBox[{"(*", "dLen\:306f\:6574\:6570", "*)"}], 
+      RowBox[{
+       RowBox[{"Dchar", "=", 
+        RowBox[{"HexStringtoCharacters", "[", "D", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"c1", "=", 
+        RowBox[{"Floor", "[", 
+         RowBox[{"dLen", "/", "20"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"indata", "=", 
+        RowBox[{"Dchar", "<>", 
+         RowBox[{"FromCharacterCode", "[", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}]}]}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"outdata", "=", 
+        RowBox[{"Hash", "[", 
+         RowBox[{"indata", ",", "\"\<SHA\>\""}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"c2", "=", "1"}], ",", 
+         RowBox[{"c2", "\[LessEqual]", "c1"}], ",", 
+         RowBox[{"c2", "++"}], ",", 
+         RowBox[{
+          RowBox[{"indata", "=", 
+           RowBox[{"Dchar", "<>", 
+            RowBox[{"FromCharacterCode", "[", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0", ",", "0", ",", "c2"}], "}"}], "]"}]}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"outdata", "=", 
+           RowBox[{
+            RowBox[{"outdata", "*", 
+             RowBox[{"2", "^", "160"}]}], "+", 
+            RowBox[{"Hash", "[", 
+             RowBox[{"indata", ",", "\"\<SHA\>\""}], "]"}]}]}], ";"}]}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"outdata", "=", 
+        RowBox[{"BitShiftRight", "[", 
+         RowBox[{"outdata", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"c1", "+", "1"}], ")"}], "*", "160"}], "-", 
+           RowBox[{"dLen", "*", "8"}]}]}], "]"}]}], ";", 
+       RowBox[{
+       "(*", "\:4e0a\:4f4ddLen\:30d0\:30a4\:30c8\:3092\:53d6\:5f97", "*)"}], 
+       RowBox[{"Return", "[", 
+        RowBox[{"IntegerString", "[", 
+         RowBox[{"outdata", ",", "16", ",", 
+          RowBox[{"2", "*", "dLen"}]}], "]"}], "]"}], ";"}]}], "]"}]}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "PrimeGen", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrimeGen", "[", "pBitLen_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "r", "}"}], ",", 
+     RowBox[{
+      RowBox[{"r", "=", 
+       RowBox[{"Random", "[", 
+        RowBox[{"Integer", ",", 
+         RowBox[{
+          RowBox[{"2", "^", 
+           RowBox[{"(", 
+            RowBox[{"pBitLen", "-", "1"}], ")"}]}], "-", "1"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"r", "=", 
+       RowBox[{"BitOr", "[", 
+        RowBox[{"r", ",", 
+         RowBox[{"2", "^", 
+          RowBox[{"(", 
+           RowBox[{"pBitLen", "-", "1"}], ")"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"PrimeQ", "[", "r", "]"}]}], ",", 
+        RowBox[{
+         RowBox[{"r", "=", 
+          RowBox[{"Random", "[", 
+           RowBox[{"Integer", ",", 
+            RowBox[{
+             RowBox[{"2", "^", 
+              RowBox[{"(", 
+               RowBox[{"pBitLen", "-", "1"}], ")"}]}], "-", "1"}]}], "]"}]}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"r", "=", 
+          RowBox[{"BitOr", "[", 
+           RowBox[{"r", ",", 
+            RowBox[{"2", "^", 
+             RowBox[{"(", 
+              RowBox[{"pBitLen", "-", "1"}], ")"}]}]}], "]"}]}], ";"}]}], 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "r", "]"}], ";"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124444594453287`*^9, 3.612444506682475*^9}, {3.61244453726824*^9, 
+   3.6124445524030952`*^9}, {3.61247909281553*^9, 3.612479093980741*^9}, {
+   3.614088990579503*^9, 3.6140890538993397`*^9}, {3.614158148223695*^9, 
+   3.614158149362341*^9}, {3.614158320451139*^9, 3.614158321898697*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{77, Automatic}, {17, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 5084, 125, 300, "Input"]
+}
+]
+*)
+

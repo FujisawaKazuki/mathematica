@@ -1,0 +1,201 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      7827,        200]
+NotebookOptionsPosition[      7403,        179]
+NotebookOutlinePosition[      7770,        195]
+CellTagsIndexPosition[      7727,        192]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "RSAOAEPDec", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"RSAOAEPDec", "[", 
+     RowBox[{
+     "c_", ",", "mLen_", ",", "dp_", ",", "dq_", ",", "p_", ",", "q_", ",", 
+      "qInv_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "cint", ",", "EMint", ",", "m", ",", "maskedDB", ",", "maskedSeed", 
+        ",", "seedMask", ",", "dbMask", ",", "DB", ",", "IHash", ",", "PSx01",
+         ",", "r", ",", "tmp"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StringLength", "[", "c", "]"}], "\[NotEqual]", "256"}], 
+         ",", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", "\"\<Error:\:5fa9\:53f7\:30a8\:30e9\:30fc\>\"", "]"}],
+           ";", 
+          RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"cint", "=", 
+        RowBox[{"FromDigits", "[", 
+         RowBox[{"c", ",", "16"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"cint", "\[GreaterEqual]", 
+          RowBox[{"p", "*", "q"}]}], ",", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", "\"\<Error:\:5fa9\:53f7\:30a8\:30e9\:30fc\>\"", "]"}],
+           ";", 
+          RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"EMint", "=", 
+        RowBox[{"RSADec", "[", 
+         RowBox[{
+         "cint", ",", "dp", ",", "dq", ",", "p", ",", "q", ",", "qInv"}], 
+         "]"}]}], ";", 
+       RowBox[{"(*", "w", "*)"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"tmp", "=", 
+        RowBox[{"BitShiftRight", "[", 
+         RowBox[{"EMint", ",", 
+          RowBox[{"8", "*", "127"}]}], "]"}]}], ";", 
+       RowBox[{"(*", "w\:306e\:6700\:4e0a\:4f4d\:30d0\:30a4\:30c8", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"tmp", "\[NotEqual]", "0"}], ",", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", "\"\<Error:\:5fa9\:53f7\:30a8\:30e9\:30fc\>\"", "]"}],
+           ";", 
+          RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"tmp", "=", 
+        RowBox[{"BitShiftRight", "[", 
+         RowBox[{"EMint", ",", 
+          RowBox[{"8", "*", "107"}]}], "]"}]}], ";", 
+       RowBox[{"(*", "t\:3092\:62bd\:51fa", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"maskedSeed", "=", 
+        RowBox[{"IntegerString", "[", 
+         RowBox[{"tmp", ",", "16", ",", "40"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"tmp", "=", 
+        RowBox[{"BitAnd", "[", 
+         RowBox[{"EMint", ",", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"(", 
+             RowBox[{"107", "*", "8"}], ")"}]}], "-", "1"}]}], "]"}]}], ";", 
+       RowBox[{"(*", "s\:3092\:62bd\:51fa", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"maskedDB", "=", 
+        RowBox[{"IntegerString", "[", 
+         RowBox[{"tmp", ",", "16", ",", "214"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"seedMask", "=", 
+        RowBox[{"MGF", "[", 
+         RowBox[{"maskedDB", ",", "20"}], "]"}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{"H", 
+         RowBox[{"(", "s", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"r", "=", 
+        RowBox[{"HexStringXor", "[", 
+         RowBox[{"maskedSeed", ",", "seedMask", ",", "20"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"dbMask", "=", 
+        RowBox[{"MGF", "[", 
+         RowBox[{"r", ",", "107"}], "]"}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{"G", 
+         RowBox[{"(", "r", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"DB", "=", 
+        RowBox[{"HexStringXor", "[", 
+         RowBox[{"maskedDB", ",", "dbMask", ",", "107"}], "]"}]}], ";", 
+       RowBox[{"(*", "z", "*)"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"IHash", "=", 
+        RowBox[{"StringTake", "[", 
+         RowBox[{"DB", ",", "40"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"PSx01", "=", 
+        RowBox[{"StringTake", "[", 
+         RowBox[{"DB", ",", 
+          RowBox[{"{", 
+           RowBox[{"41", ",", 
+            RowBox[{"214", "-", 
+             RowBox[{"2", "*", "mLen"}]}]}], "}"}]}], "]"}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{"PS", "||", 
+         RowBox[{"0", "x01"}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"m", "=", 
+        RowBox[{"StringTake", "[", 
+         RowBox[{"DB", ",", 
+          RowBox[{
+           RowBox[{"-", "2"}], "*", "mLen"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"IHash", "\[NotEqual]", "\"\<seccap.exe\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", "\"\<Error:\:5fa9\:53f7\:30a8\:30e9\:30fc\>\"", "]"}],
+           ";", 
+          RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"FromDigits", "[", 
+           RowBox[{"PSx01", ",", "16"}], "]"}], "\[NotEqual]", "1"}], ",", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", "\"\<Error:\:5fa9\:53f7\:30a8\:30e9\:30fc\>\"", "]"}],
+           ";", 
+          RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "m", "]"}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124446312872057`*^9, 3.6124446561936817`*^9}, {3.612444938435648*^9, 
+   3.612444969065277*^9}, {3.612445114522283*^9, 3.612445130425054*^9}, {
+   3.6141497391223707`*^9, 3.6141497648268223`*^9}, {3.614149800431131*^9, 
+   3.614149828885983*^9}, {3.6146564960637617`*^9, 3.6146566157343283`*^9}, {
+   3.614656652082273*^9, 3.6146567465459833`*^9}, {3.614657051506899*^9, 
+   3.61465705789974*^9}, {3.614657111319051*^9, 3.614657688926437*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, 157}, {43, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 6999, 164, 559, "Input"]
+}
+]
+*)
+

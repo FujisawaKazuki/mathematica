@@ -1,0 +1,182 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      6766,        181]
+NotebookOptionsPosition[      6343,        160]
+NotebookOutlinePosition[      6709,        176]
+CellTagsIndexPosition[      6666,        173]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "ECElGamalOAEPDec", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ECElGamalOAEPDec", "[", 
+    RowBox[{
+    "c_", ",", "mLen_", ",", "k0_", ",", "k1_", ",", "a_", ",", "x_", ",", 
+     "p_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "cint", ",", "EMint", ",", "m", ",", "maskedDB", ",", "maskedSeed", ",",
+        "seedMask", ",", "dbMask", ",", "DB", ",", "r", ",", "tmp", ",", 
+       "ZPad"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"StringLength", "[", 
+          RowBox[{"c", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[NotEqual]", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"k0", "+", "k1", "+", "mLen"}], ")"}], "*", "2"}]}], ",", 
+        RowBox[{
+         RowBox[{
+         "Print", "[", 
+          "\"\<Error:\:5fa9\:53f7\:3067\:304d\:307e\:305b\:3093\>\"", "]"}], 
+         ";", 
+         RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"cint", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"FromDigits", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"c", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "16"}], "]"}], ",", 
+           RowBox[{"FromDigits", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"c", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", "16"}], "]"}]}], "}"}], 
+         ",", 
+         RowBox[{"FromDigits", "[", 
+          RowBox[{
+           RowBox[{"c", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", "16"}], "]"}]}], "}"}]}], 
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"EMint", "=", 
+       RowBox[{"ECElGamalDec", "[", 
+        RowBox[{"cint", ",", "a", ",", "x", ",", "p"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"tmp", "=", 
+       RowBox[{"BitShiftRight", "[", 
+        RowBox[{"EMint", ",", 
+         RowBox[{"8", "*", 
+          RowBox[{"(", 
+           RowBox[{"mLen", "+", "k1"}], ")"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"maskedSeed", "=", 
+       RowBox[{"IntegerString", "[", 
+        RowBox[{"tmp", ",", "16", ",", 
+         RowBox[{"k0", "*", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"tmp", "=", 
+       RowBox[{"BitAnd", "[", 
+        RowBox[{"EMint", ",", 
+         RowBox[{
+          RowBox[{"2", "^", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"mLen", "+", "k1"}], ")"}], "*", "8"}], ")"}]}], "-", 
+          "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"maskedDB", "=", 
+       RowBox[{"IntegerString", "[", 
+        RowBox[{"tmp", ",", "16", ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"mLen", "+", "k1"}], ")"}], "*", "2"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"seedMask", "=", 
+       RowBox[{"MGF", "[", 
+        RowBox[{"maskedSeed", ",", "seedMask", ",", "k0"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"r", "=", 
+       RowBox[{"HexStringXor", "[", 
+        RowBox[{"maskedSeed", ",", "seedMask", ",", "k0"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"dbMask", "=", 
+       RowBox[{"MGF", "[", 
+        RowBox[{"r", ",", 
+         RowBox[{"mLen", "+", "k1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"DB", "=", 
+       RowBox[{"HexStringXor", "[", 
+        RowBox[{"maskedDB", ",", "dbMask", ",", 
+         RowBox[{"mLen", "+", "k1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ZPad", "=", 
+       RowBox[{"StringTake", "[", 
+        RowBox[{"DB", ",", 
+         RowBox[{"k1", "*", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"m", "=", 
+       RowBox[{"StringTake", "[", 
+        RowBox[{"DB", ",", 
+         RowBox[{
+          RowBox[{"-", "2"}], "*", "mLen"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FromDigits", "[", 
+          RowBox[{"ZPad", ",", "16"}], "]"}], "\[NotEqual]", "0"}], ",", 
+        RowBox[{
+         RowBox[{
+         "Print", "[", 
+          "\"\<Error\:5fa9\:53f7\:3067\:304d\:307e\:305b\:3093\>\"", "]"}], 
+         ";", 
+         RowBox[{"Return", "[", "Null", "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "m", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124446312872057`*^9, 3.6124446561936817`*^9}, {3.612444938435648*^9, 
+   3.612444969065277*^9}, {3.612445114522283*^9, 3.612445130425054*^9}, {
+   3.619529269466166*^9, 3.6195293718058157`*^9}, {3.6195294371238937`*^9, 
+   3.619529468984416*^9}, {3.619529831627087*^9, 3.619529894229941*^9}, {
+   3.620696861544606*^9, 3.620696920488181*^9}, {3.620696974167515*^9, 
+   3.6206971625718737`*^9}, {3.620697236574196*^9, 3.6206976614184113`*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, 27}, {12, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 5939, 145, 382, "Input"]
+}
+]
+*)
+

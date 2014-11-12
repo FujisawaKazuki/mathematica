@@ -1,0 +1,150 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      5927,        149]
+NotebookOptionsPosition[      5504,        128]
+NotebookOutlinePosition[      5870,        144]
+CellTagsIndexPosition[      5827,        141]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "SieveFactorBase", "]"}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"SieveFactorBase", "[", 
+      RowBox[{"n_", ",", "numl_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", ",", "counter", ",", "factorbase"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"counter", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"i", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"factorbase", "=", 
+         RowBox[{"{", 
+          RowBox[{"-", "1"}], "}"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{
+          RowBox[{"counter", "<", 
+           RowBox[{"numl", "-", "1"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"i", "=", 
+            RowBox[{"i", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"JacobiSymbol", "[", 
+               RowBox[{
+                RowBox[{"Mod", "[", 
+                 RowBox[{"n", ",", 
+                  RowBox[{"Prime", "[", "i", "]"}]}], "]"}], ",", 
+                RowBox[{"Prime", "[", "i", "]"}]}], "]"}], "\[Equal]", "1"}], 
+             ",", 
+             RowBox[{
+              RowBox[{"AppendTo", "[", 
+               RowBox[{"factorbase", ",", 
+                RowBox[{"Prime", "[", "i", "]"}]}], "]"}], ";", 
+              RowBox[{"counter", "=", 
+               RowBox[{"counter", "+", "1"}]}], ";"}]}], "]"}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Return", "[", "factorbase", "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"SieveFactorBase", "[", 
+      RowBox[{"46001", ",", "4"}], "]"}], "ok"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SieveFactorBase", "[", 
+    RowBox[{"n_", ",", "numl_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "x", ",", "v", ",", "k"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"v", "=", 
+       RowBox[{"{", 
+        RowBox[{"-", "1"}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "=", "2"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"i", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"k", "<", 
+         RowBox[{"numl", "-", "1"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"JacobiSymbol", "[", 
+             RowBox[{
+              RowBox[{"Mod", "[", 
+               RowBox[{"n", ",", 
+                RowBox[{"Prime", "[", "i", "]"}]}], "]"}], ",", 
+              RowBox[{"Prime", "[", "i", "]"}]}], "]"}], "\[Equal]", "1"}], 
+           ",", 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"v", ",", 
+              RowBox[{"Prime", "[", "i", "]"}]}], "]"}], ";", 
+            RowBox[{"k", "++"}]}]}], "]"}], ";", 
+         RowBox[{"i", "=", 
+          RowBox[{"i", "+", "1"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "v", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.612369516015724*^9, 3.612369521774312*^9}, {3.612369561240489*^9, 
+   3.6123699556166763`*^9}, {3.612369986135355*^9, 3.612370168474429*^9}, {
+   3.6123702956745453`*^9, 3.612370500731637*^9}, {3.615809449581223*^9, 
+   3.615809576286784*^9}, {3.615809665624765*^9, 3.615809680288781*^9}, {
+   3.616576964204064*^9, 3.6165772719198923`*^9}, {3.616577362971833*^9, 
+   3.6165773793008633`*^9}, {3.61657814248018*^9, 3.616578233118469*^9}, {
+   3.617536987632255*^9, 3.617537042331709*^9}, {3.6175370946583443`*^9, 
+   3.617537119258697*^9}, {3.6175371612813253`*^9, 3.617537335848794*^9}, {
+   3.6175373687451143`*^9, 3.617537402369035*^9}, {3.617537459873156*^9, 
+   3.617537510229156*^9}, {3.6175375662614803`*^9, 3.617537580645378*^9}, {
+   3.617537653598199*^9, 3.617537659004435*^9}, {3.617623901191478*^9, 
+   3.6176239030723*^9}, {3.619001136804439*^9, 3.6190013148809223`*^9}}]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, 327}, {8, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 5100, 113, 373, "Input"]
+}
+]
+*)
+

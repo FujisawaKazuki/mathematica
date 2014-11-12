@@ -1,0 +1,115 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      4381,        114]
+NotebookOptionsPosition[      3887,         90]
+NotebookOutlinePosition[      4254,        106]
+CellTagsIndexPosition[      4211,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "ProbCarmichael", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ProbCarmichael", "[", 
+     RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "n", ",", "m"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"n", "=", "0"}], ";", 
+       RowBox[{"m", "=", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"x", "=", "a"}], ",", 
+         RowBox[{"x", "\[LessEqual]", "b"}], ",", 
+         RowBox[{"x", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", ">", "1"}], "&&", 
+             RowBox[{"Divisible", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"x", "-", "1"}], ")"}], ",", 
+               RowBox[{"CarmichaelLambda", "[", "x", "]"}]}], "]"}]}], ",", 
+            RowBox[{
+             RowBox[{"m", "++"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"PrimeQ", "[", "x", "]"}], ",", ",", 
+               RowBox[{"n", "++"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+           "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "m", ",", 
+          RowBox[{"N", "[", 
+           RowBox[{
+            RowBox[{"n", "/", "m"}], ",", "10"}], "]"}]}], "}"}], "]"}], 
+       ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ProbCarmichael", "[", 
+  RowBox[{"2", ",", "100"}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.611392248635681*^9, 3.611392248637158*^9}, 
+   3.611392314619116*^9, {3.611392344782393*^9, 3.611392374670356*^9}, {
+   3.61139244438346*^9, 3.611392474803562*^9}, {3.6113925053922977`*^9, 
+   3.61139250720603*^9}, {3.611392559965499*^9, 3.611392624846285*^9}, {
+   3.6113926935391617`*^9, 3.611392733051296*^9}, {3.611393206296508*^9, 
+   3.61139322860804*^9}, {3.611393297762422*^9, 3.611393298247857*^9}, {
+   3.611393332157851*^9, 3.6113933378924427`*^9}, {3.6113934396386347`*^9, 
+   3.611393447919619*^9}, {3.6113935055111103`*^9, 3.611393509295933*^9}, {
+   3.61139355159146*^9, 3.611393605194186*^9}, {3.611393673394195*^9, 
+   3.611393675457876*^9}, {3.611394298354951*^9, 3.611394365112355*^9}, {
+   3.6124444594453287`*^9, 3.612444506682475*^9}, {3.61244453726824*^9, 
+   3.6124445524030952`*^9}, {3.61247909281553*^9, 3.612479093980741*^9}, {
+   3.614088990579503*^9, 3.6140890538993397`*^9}, {3.614158148223695*^9, 
+   3.614158149362341*^9}, {3.614158320451139*^9, 3.614158321898697*^9}, {
+   3.6158110665614033`*^9, 3.615811093919715*^9}, {3.615811154189788*^9, 
+   3.61581128114752*^9}, {3.6158113163824997`*^9, 3.6158114679329157`*^9}, {
+   3.6158115466020527`*^9, 3.615811561272665*^9}, {3.615811596598281*^9, 
+   3.615811653844974*^9}, {3.615811705476227*^9, 3.6158117067978086`*^9}, {
+   3.615812629817747*^9, 3.615812654028722*^9}, {3.61581285560787*^9, 
+   3.6158130247332983`*^9}, {3.6208387303674097`*^9, 3.6208387344918203`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "25", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.615813033859367*^9, 3.620838735826973*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 708},
+WindowMargins->{{Automatic, 215}, {28, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2011\:5e7410\
+\:670813\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 3298, 67, 208, "Input"],
+Cell[3723, 84, 148, 3, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
